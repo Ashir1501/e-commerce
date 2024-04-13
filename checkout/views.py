@@ -184,10 +184,10 @@ def update_create_order(request):
                 order_item.quantity += quantity
 
             order_item.save()
-
+        cart_items.delete()
         return JsonResponse({'message':'Order Created Successfully'})
-
+        
     return JsonResponse({'message':'Invalid Request method'},status=400)
 
 def thankYou(request):
-    return HttpResponse('Thank You!!' )
+    return render(request,'thankYou.html')
