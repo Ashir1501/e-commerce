@@ -19,7 +19,7 @@ class Order(models.Model):
     ]
 
     user = models.ForeignKey(Account,on_delete=models.CASCADE,null=True,blank=True)
-    order_id = models.UUIDField(default=uuid.uuid4,editable=False,unique=True)
+    orderid = models.UUIDField(default=uuid.uuid4,editable=False,unique=True)
     payment_id = models.CharField(max_length=200)
     items = models.ManyToManyField(OrderItem)
     total_price = models.DecimalField(max_digits=10,decimal_places=2)
