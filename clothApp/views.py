@@ -42,3 +42,6 @@ def search_product(request):
             }
 
             return render(request, 'search.html', context)
+
+def services(request):
+    return render(request,'services.html')
